@@ -1,2 +1,4 @@
-# TA70-Project-tutoré
-/ MonteSchool : Gestion de la facturation
+# TA70-Project-tutoré 
+Amélioration d'un application de gestion de facturation 
+
+MonteSchool : Gestion de facturation
