@@ -33,3 +33,8 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Front Packages
+- PrimeFlex (grid system) [documentation](https://www.primefaces.org/primeflex/)
+- PrimeVue & PrimeIcons [documentation](https://www.primefaces.org/primevue/setup)
+- Vuelidate [documentation](https://vuelidate-next.netlify.app/)

@@ -9,25 +9,24 @@ import { RouterLink, RouterView } from "vue-router";
       <RouterLink :to="{ name: 'create-activity' }">Create Activity</RouterLink>
     </nav>
   </header>
-
   <RouterView />
 </template>
 
 <style>
-/* @import "@/assets/base.css"; */
+@import "@/assets/base.css";
 
 #app {
-  max-width: 1280px;
+  max-width: 100rem;
   margin: 0 auto;
   padding: 2rem;
 
   font-weight: normal;
 }
 
-header {
+/* header {
   line-height: 1.5;
   max-height: 100vh;
-}
+} */
 
 .logo {
   display: block;
@@ -72,7 +71,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
@@ -108,5 +107,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>

@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <main></main>
+  <h1>Home Page</h1>
 </template>
