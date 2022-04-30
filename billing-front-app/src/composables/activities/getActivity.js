@@ -2,6 +2,7 @@ import { ref } from "vue";
 
 const getActivity = (id) => {
   const activity = ref(null);
+  
   const error = ref(null);
 
   const load = async () => {
