@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import NotFoundPage from "../views/NotFoundPage.vue";
 import CreateActivity from "../views/CreateActivity.vue";
+import EditActivity from "../views/EditActivity.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,9 +39,10 @@ const router = createRouter({
       component: CreateActivity,
     },
     {
-      path: "/edit-activity",
+      path: "/edit-activity/:id",
       name: "edit-activity",
-      component: null,
+      component: EditActivity,
+      props: true,
     },
     {
       path: "/show-activities",

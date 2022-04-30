@@ -28,12 +28,12 @@ export default {
           {
             label: "list all",
             icon: "pi pi-fw pi-list",
-            to: "show-activities",
+            to: "/show-activities",
           },
           {
             label: "new activity",
             icon: "pi pi-fw pi-plus",
-            to: "create-activity",
+            to: "/create-activity",
           },
         ],
       },
@@ -44,19 +44,19 @@ export default {
           {
             label: "list all",
             icon: "pi pi-fw pi-list",
-            to: "show-bills",
+            to: "/show-bills",
           },
           {
             label: "new bill",
             icon: "pi pi-fw pi-plus",
-            to: "create-bill",
+            to: "/create-bill",
           },
         ],
       },
       {
         label: "Dashboard",
         icon: "pi pi-fw pi-chart-line",
-        to: "dashboard",
+        to: "/dashboard",
       },
       // {
       //   label: "Parameters",
