@@ -1,12 +1,7 @@
 <template>
   <Menubar :model="items">
     <template #start>
-      <img
-        alt="logo"
-        src="@/assets/img/logo.svg"
-        height="40"
-        class="ml-4 mr-4"
-      />
+      <img alt="logo" src="@/assets/img/logo.svg" height="40" class="ml-4" />
     </template>
     <Router-link :to="item.to" custom>
       {{ item.label }}
@@ -33,17 +28,12 @@ export default {
           {
             label: "list all",
             icon: "pi pi-fw pi-list",
-            to: "/show-activities",
+            to: "show-activities",
           },
           {
             label: "new activity",
             icon: "pi pi-fw pi-plus",
-            to: "/create-activity",
-          },
-          {
-            label: "temp edit activity",
-            icon: "pi pi-fw pi-edit",
-            to: "/edit-activity/2",
+            to: "create-activity",
           },
         ],
       },
@@ -54,19 +44,19 @@ export default {
           {
             label: "list all",
             icon: "pi pi-fw pi-list",
-            to: "/show-bills",
+            to: "show-bills",
           },
           {
             label: "new bill",
             icon: "pi pi-fw pi-plus",
-            to: "/create-bill",
+            to: "create-bill",
           },
         ],
       },
       {
         label: "Dashboard",
         icon: "pi pi-fw pi-chart-line",
-        to: "/dashboard",
+        to: "dashboard",
       },
       // {
       //   label: "Parameters",
