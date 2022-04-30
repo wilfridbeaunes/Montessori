@@ -1,13 +1,14 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
+<script>
+import NavComponent from "@/components/NavComponent.vue";
+
+export default {
+  components: { NavComponent },
+};
 </script>
 
 <template>
   <header>
-    <nav>
-      <RouterLink :to="{ name: 'home' }">Home</RouterLink>
-      <RouterLink :to="{ name: 'create-activity' }">Create Activity</RouterLink>
-    </nav>
+    <NavComponent />
   </header>
   <RouterView />
 </template>
