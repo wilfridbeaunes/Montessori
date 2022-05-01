@@ -12,9 +12,11 @@
       ></i>
       <h5>Activity Added successfully!</h5>
       <p :style="{ lineHeight: 1.5 }">
-        Activity Description: <b>{{ state.description }}</b
-        ><br />
+        Activity Name: <b>{{ state.name }}</b>
+        <br />
         Activity Price: <b>{{ state.price }}</b> $USD.
+        <br />
+        Activity Description: <b>{{ state.description }}</b>
       </p>
     </div>
     <template #footer>
@@ -43,6 +45,27 @@
     <template #content>
       <div class="flex justify-content-center">
         <form @submit.prevent="handleSubmit(!v$.$invalid)" class="p-fluid">
+          <div class="field">
+            <label
+              for="name"
+              :class="{ 'p-error': v$.name.$invalid && submitted }"
+              >Name*</label
+            >
+            <InputText
+              id="name"
+              v-model="v$.name.$model"
+              :class="{ 'p-invalid': v$.name.$invalid && submitted }"
+            />
+            <div
+              v-if="
+                (v$.name.$invalid && submitted) || v$.name.$pending.$response
+              "
+              class="p-error small-error"
+            >
+              {{ v$.name.required.$message.replace("Value", "Name") }}
+            </div>
+          </div>
+
           <div class="field">
             <label
               for="price"
@@ -126,11 +149,13 @@ import { useRouter } from "vue-router";
 export default {
   setup() {
     const state = reactive({
+      name: "",
       price: "",
       description: "",
     });
 
     const rules = {
+      name: { required },
       price: { required, numeric, minValueValue: minValue(0) },
       description: { required },
     };
@@ -144,6 +169,7 @@ export default {
       submitted.value = true;
 
       const newActivity = {
+        name: state.name,
         price: state.price,
         description: state.description,
       };
@@ -167,6 +193,7 @@ export default {
       }
     };
     const resetForm = () => {
+      state.name = "";
       state.price = "";
       state.description = "";
       submitted.value = false;
