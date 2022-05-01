@@ -21,6 +21,8 @@ import Button from "primevue/button";
 import Card from "primevue/Card";
 import InputNumber from "primevue/inputnumber";
 import Dialog from "primevue/dialog";
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
 
 const app = createApp(App);
 
@@ -39,5 +41,7 @@ app.component("Button", Button);
 app.component("Card", Card);
 app.component("InputNumber", InputNumber);
 app.component("Dialog", Dialog);
+app.component("DataTable", DataTable);
+app.component("Column", Column);
 
 app.mount("#app");

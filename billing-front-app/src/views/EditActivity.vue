@@ -35,7 +35,7 @@
     </template>
   </Dialog>
 
-  <Card v-if="state.price && state.description" class="card">
+  <Card v-if="isLoaded" class="card">
     <template #title>
       <div class="text-center">Edit Activity {{ state.name }}</div>
     </template>
@@ -127,9 +127,9 @@
             />
             <Button
               type="submit"
-              label="Add Activity"
+              label="Edit Activity"
               class="mt-2 ml-1"
-              icon="pi pi-plus"
+              icon="pi pi-pencil"
               iconPos="right"
             />
           </div>
@@ -138,7 +138,7 @@
     </template>
   </Card>
   <div v-else>
-    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>Loading...
+    <LoadingComponent></LoadingComponent>
   </div>
 </template>
 
@@ -148,8 +148,10 @@ import { required, numeric, minValue } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 import { useRouter } from "vue-router";
 import getActivity from "@/composables/activities/getActivity";
+import LoadingComponent from "@/components/LoadingComponent.vue";
 
 export default {
+  components: { LoadingComponent },
   props: ["id"],
   setup(props) {
     const state = reactive({
@@ -158,13 +160,17 @@ export default {
       description: null,
     });
 
+    let isLoaded = ref(true);
+
+    let err = ref(null);
     onMounted(async () => {
       const { activity, error, load } = getActivity(props.id);
       await load();
       state.name = activity.value.name;
       state.price = parseFloat(activity.value.price);
       state.description = activity.value.description;
-      return { activity, error };
+      err = error;
+      isLoaded = false;
     });
 
     const rules = {
@@ -228,6 +234,8 @@ export default {
       redirectHome,
       submitted,
       showMessage,
+      err,
+      isLoaded,
     };
   },
 };
@@ -235,7 +243,7 @@ export default {
 
 <style scoped>
 .card {
-  margin: 5rem auto;
+  margin: 2rem auto;
   padding: 2rem;
   width: fit-content;
 }

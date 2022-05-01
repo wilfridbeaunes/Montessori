@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import NotFoundPage from "../views/NotFoundPage.vue";
 import CreateActivity from "../views/CreateActivity.vue";
 import EditActivity from "../views/EditActivity.vue";
+import ShowActivities from "../views/ShowActivities.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,13 +48,13 @@ const router = createRouter({
     {
       path: "/show-activities",
       name: "show-activities",
-      component: null,
+      component: ShowActivities,
     },
-    {
-      path: "/show-activity/:id",
-      name: "show-activity",
-      component: null,
-    },
+    // {
+    //   path: "/show-activity/:id",
+    //   name: "show-activity",
+    //   component: null,
+    // },
 
     //redirect
     {
