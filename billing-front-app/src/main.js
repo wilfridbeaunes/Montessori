@@ -18,7 +18,7 @@ import Dropdown from "primevue/dropdown";
 import Checkbox from "primevue/checkbox";
 import Textarea from "primevue/textarea";
 import Button from "primevue/button";
-import Card from "primevue/Card";
+import Card from "primevue/card";
 import InputNumber from "primevue/inputnumber";
 import Dialog from "primevue/dialog";
 import DataTable from "primevue/datatable";
