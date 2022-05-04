@@ -26,30 +26,30 @@ export default {
         icon: "pi pi-fw pi-paperclip",
         items: [
           {
-            label: "list all",
+            label: "List All",
             icon: "pi pi-fw pi-list",
             to: "/show-activities",
           },
           {
-            label: "new activity",
+            label: "New Activity",
             icon: "pi pi-fw pi-plus",
             to: "/create-activity",
           },
         ],
       },
       {
-        label: "Bills",
+        label: "Invoices",
         icon: "pi pi-fw pi-money-bill",
         items: [
           {
-            label: "list all",
+            label: "List All",
             icon: "pi pi-fw pi-list",
-            to: "/show-bills",
+            to: "/show-invoices",
           },
           {
-            label: "new bill",
+            label: "New Invoice",
             icon: "pi pi-fw pi-plus",
-            to: "/create-bill",
+            to: "/create-invoice",
           },
         ],
       },

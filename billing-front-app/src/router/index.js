@@ -15,18 +15,18 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/create-bill",
-      name: "create-bill",
+      path: "/create-invoice",
+      name: "create-invoice",
       component: null,
     },
     {
-      path: "/show-bills",
-      name: "show-bills",
+      path: "/show-invoices",
+      name: "show-invoices",
       component: null,
     },
     {
-      path: "/show-bill/:id",
-      name: "show-bill",
+      path: "/show-invoice/:id",
+      name: "show-invoice",
       component: null,
     },
     {
@@ -50,11 +50,6 @@ const router = createRouter({
       name: "show-activities",
       component: ShowActivities,
     },
-    // {
-    //   path: "/show-activity/:id",
-    //   name: "show-activity",
-    //   component: null,
-    // },
 
     //redirect
     {
